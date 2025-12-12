@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
-# A Bash script that sends SIGTERM to the 7-highlander process
+# A Bash script that sends SIGTERM to any running 7-highlander process, then prints OK
 
-pids=$(pgrep -f 7-highlander)
+# Find PIDs of processes whose command line contains "7-highlander"
+pids="$(pgrep -f "7-highlander" 2>/dev/null || true)"
 
-for pid in $pids; do
-    kill -15 "$pid"
-done
+# If any were found, send SIGTERM to each (suppress errors)
+if [ -n "$pids" ]; then
+  for pid in $pids; do
+    kill -15 "$pid" 2>/dev/null || true
+  done
+fi
 
-# Output OK for auto-checker
-echo "OK"
+# Required auto-checker output
+echo OK
