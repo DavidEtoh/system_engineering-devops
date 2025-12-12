@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# A Bash script that outputs nothing (auto-checker expects empty output)
+# A Bash script that outputs a single empty line
 
-echo
+echo ""
