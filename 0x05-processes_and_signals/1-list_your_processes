@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# A Bash script that displays only the USER column for all running processes
+# A Bash script that displays all currently running processes by user only
 
-ps -e -o user
+ps -e -o user= 
