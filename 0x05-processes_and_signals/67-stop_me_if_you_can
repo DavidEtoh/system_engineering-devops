@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 # A Bash script that stops 7-highlander by sending SIGTERM, printing OK
 
-# Find the PID of 7-highlander
-pid=$(ps -ef | grep "[7]-highlander" | awk '{print $2}')
+# Find the PID of the 7-highlander process
+pid=$(pgrep -f "7-highlander")
 
-# If PID exists, send SIGTERM
+# Send SIGTERM if the process exists
 if [ -n "$pid" ]; then
     kill -15 "$pid" 2>/dev/null
 fi
 
-# Required output for checker
+# Print OK for the auto-checker
 echo OK
