@@ -1,12 +1,8 @@
 #!/usr/bin/env bash
-# 7-highlander
-# Print "To infinity and beyond" forever, sleep 2 between prints.
-# When receiving SIGTERM, print "I am invincible!!!" and continue.
+trap "echo I am invincible!!!" SIGTERM
 
-# Trap SIGTERM and run the handler (does not exit)
-trap 'printf "I am invincible!!!\n"' SIGTERM
-
-while true; do
-  printf "To infinity and beyond\n"
-  sleep 2
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
 done
