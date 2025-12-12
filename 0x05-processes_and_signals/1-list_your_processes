@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# A Bash script that displays all running process owners (usernames only), no headers
+# A Bash script that displays the username of the person running the script
 
-ps -eo user --no-headers
+whoami
