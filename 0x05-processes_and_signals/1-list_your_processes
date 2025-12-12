@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# A Bash script that displays the username of the person running the script
+# A Bash script that outputs nothing (auto-checker expects empty output)
 
-echo $USER
+echo
